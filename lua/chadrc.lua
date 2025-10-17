@@ -9,12 +9,12 @@ M.base46 = {
   theme = "gruvbox",
 
   hl_override = {
-    Comment = { italic = false },   -- comments in any programming languages.
+    Comment = { italic = false }, -- comments in any programming languages.
     ["@comment"] = { italic = true }, -- type-annotation type of Lua comments.
   },
 }
 
-M.nvdash = { load_on_startup = true }
+M.nvdash = { load_on_startup = false }
 
 -- The following Mason packages will be installed by :MasonInstallAll.
 M.mason = {
