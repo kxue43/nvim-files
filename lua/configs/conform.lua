@@ -2,8 +2,8 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     gopls = { "gofmt" },
-    -- css = { "prettier" },
     -- html = { "prettier" },
+    -- css = { "prettier" },
   },
 
   format_on_save = {

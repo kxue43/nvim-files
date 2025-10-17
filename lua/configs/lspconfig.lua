@@ -1,5 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
+-- Add own LSP configs here.
 vim.lsp.config("gopls", {
   settings = {
     gopls = {
@@ -12,7 +13,8 @@ vim.lsp.config("gopls", {
   },
 })
 
-local servers = { "gopls", "lua_ls", "html", "cssls" }
+-- Enable configured LSPs.
+local servers = { "gopls", "lua_ls" }
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
