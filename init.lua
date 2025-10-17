@@ -1,6 +1,6 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
-vim.env.SHELL = "/usr/local/bin/bash"
+vim.opt.shell = "/usr/local/bin/bash"
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
