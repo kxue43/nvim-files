@@ -1,0 +1,60 @@
+{
+  "name": "kxue43-snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "c",
+        "path": "./symlinks/c.json"
+      },
+      {
+        "language": "eruby",
+        "path": "./symlinks/erb.json"
+      },
+      {
+        "language": "go",
+        "path": "./symlinks/go.json"
+      },
+      {
+        "language": "html",
+        "path": "./symlinks/html.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./symlinks/javascript.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./symlinks/markdown.json"
+      },
+      {
+        "language": "python",
+        "path": "./symlinks/python.json"
+      },
+      {
+        "language": "restructuredtext",
+        "path": "./symlinks/restructuredtext.json"
+      },
+      {
+        "language": "ruby",
+        "path": "./symlinks/ruby.json"
+      },
+      {
+        "language": [
+          "shellscript",
+          "shell",
+          "sh",
+          "bash",
+          "zsh"
+        ],
+        "path": "./symlinks/shellscript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./symlinks/typescript.json"
+      }
+    ]
+  }
+}
