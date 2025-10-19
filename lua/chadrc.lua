@@ -23,6 +23,7 @@ M.mason = {
     "stylua",
     "gopls",
     "bash-language-server",
+    "prettier",
   },
 }
 
