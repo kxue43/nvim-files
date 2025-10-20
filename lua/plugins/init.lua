@@ -113,7 +113,7 @@ return {
           else
             gitsigns.nav_hunk "next"
           end
-        end)
+        end, { desc = "Next diff or next hunk." })
 
         map("n", "[c", function()
           if vim.wo.diff then
@@ -121,43 +121,43 @@ return {
           else
             gitsigns.nav_hunk "prev"
           end
-        end)
+        end, { desc = "Previous diff or previous hunk." })
 
         -- Actions
-        map("n", "\\hs", gitsigns.stage_hunk)
-        map("n", "\\hr", gitsigns.reset_hunk)
-        map("n", "\\hp", gitsigns.preview_hunk)
-        map("n", "\\hi", gitsigns.preview_hunk_inline)
+        map("n", "\\hs", gitsigns.stage_hunk, { desc = "Stage/unstage hunk." })
+        map("n", "\\hr", gitsigns.reset_hunk, { desc = "Reset hunk." })
+        map("n", "\\hp", gitsigns.preview_hunk, { desc = "Preview hunk." })
+        map("n", "\\hi", gitsigns.preview_hunk_inline, { desc = "Preview hunk inline." })
 
         map("v", "\\hs", function()
           gitsigns.stage_hunk { vim.fn.line ".", vim.fn.line "v" }
-        end)
+        end, { desc = "Stage/unstage visually selected hunk." })
 
         map("v", "\\hr", function()
           gitsigns.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
-        end)
+        end, { desc = "Reset visually selected hunk." })
 
-        map("n", "\\hS", gitsigns.stage_buffer)
-        map("n", "\\hR", gitsigns.reset_buffer)
+        map("n", "\\hS", gitsigns.stage_buffer, { desc = "Stage buffer." })
+        map("n", "\\hR", gitsigns.reset_buffer, { desc = "Reset buffer." })
 
         map("n", "\\hb", function()
           gitsigns.blame_line { full = true }
-        end)
+        end, { desc = "Blame current line." })
 
-        map("n", "\\hd", gitsigns.diffthis)
+        map("n", "\\hd", gitsigns.diffthis, { desc = "Buffer git diff" })
 
         map("n", "\\hD", function()
           gitsigns.diffthis "~"
-        end)
+        end, { desc = "Buffer git diff --cached" })
 
+        map("n", "\\hq", gitsigns.setqflist, { desc = "Show hunks of current buffer." })
         map("n", "\\hQ", function()
           gitsigns.setqflist "all"
-        end)
-        map("n", "\\hq", gitsigns.setqflist)
+        end, { desc = "Show hunks of whole repository." })
 
         -- Toggles
-        map("n", "\\tb", gitsigns.toggle_current_line_blame)
-        map("n", "\\tw", gitsigns.toggle_word_diff)
+        map("n", "\\tb", gitsigns.toggle_current_line_blame, { desc = "Toggle line blame." })
+        map("n", "\\tw", gitsigns.toggle_word_diff, { desc = "Toggle word diff." })
       end
 
       return options
