@@ -3,27 +3,30 @@
 -- Please read that file to know all available options :(
 
 ---@type ChadrcConfig
-local M = {}
+local M = {
+  base46 = {
+    theme = "gruvbox",
 
-M.base46 = {
-  theme = "gruvbox",
-
-  hl_override = {
-    Comment = { italic = false }, -- comments in any programming languages.
-    ["@comment"] = { italic = true }, -- type-annotation type of Lua comments.
+    hl_override = {
+      Comment = { italic = false }, -- comments in any programming languages.
+      ["@comment"] = { italic = true }, -- type-annotation type of Lua comments.
+    },
   },
-}
 
-M.nvdash = { load_on_startup = false }
+  ui = {
+    tabufline = { lazyload = false },
+  },
 
--- The following Mason packages will be installed by :MasonInstallAll.
-M.mason = {
-  pkgs = {
-    "lua-language-server",
-    "stylua",
-    "gopls",
-    "bash-language-server",
-    "prettier",
+  nvdash = { load_on_startup = false },
+
+  mason = {
+    pkgs = {
+      "lua-language-server",
+      "stylua",
+      "gopls",
+      "bash-language-server",
+      "prettier",
+    },
   },
 }
 
