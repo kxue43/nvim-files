@@ -26,6 +26,14 @@ local M = {
       "gopls",
       "bash-language-server",
       "prettier",
+      "basedpyright",
+    },
+    -- Mypy, flake8 and black should be provided from the project's virtualenv
+    -- rather than by Mason.
+    skip = {
+      "mypy",
+      "flake8",
+      "black",
     },
   },
 }

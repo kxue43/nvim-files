@@ -4,6 +4,7 @@ local options = {
     gopls = { "gofmt" },
     json = { "prettier" },
     jsonc = { "prettier" },
+    python = { "black" },
   },
 
   format_on_save = {
