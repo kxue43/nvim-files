@@ -4,13 +4,15 @@ local options = {
     gopls = { "gofmt" },
     json = { "prettier" },
     jsonc = { "prettier" },
-    python = { "black" },
+    python = { "black", timeout_ms = 10000 },
+  },
+
+  default_format_opts = {
+    lsp_format = "fallback",
   },
 
   format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_fallback = true,
+    timeout_ms = 1000,
   },
 }
 
