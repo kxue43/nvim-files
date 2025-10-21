@@ -13,8 +13,24 @@ vim.lsp.config("gopls", {
   },
 })
 
+vim.lsp.config("basedpyright", {
+  settings = {
+    basedpyright = {
+      disableOrganizeImports = true,
+      analysis = {
+        autoSearchPaths = false,
+        typeCheckingMode = "basic",
+        useTypingExtensions = true,
+        inlayHints = {
+          callArgumentNames = false,
+        },
+      },
+    },
+  },
+})
+
 -- Enable configured LSPs.
-local servers = { "gopls", "lua_ls", "bashls" }
+local servers = { "gopls", "lua_ls", "bashls", "basedpyright" }
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
