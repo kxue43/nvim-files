@@ -261,4 +261,25 @@ return {
       return options
     end,
   },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "go",
+        "python",
+        "javascript",
+        "typescript",
+        "java",
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+      },
+    },
+    branch = "master",
+    lazy = false,
+    build = ":TSUpdate",
+  },
 }
