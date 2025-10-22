@@ -1,15 +1,12 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
--- All shell scripts are in Bash.
-vim.g.is_bash = 1
+-- Load VSCode snippets.
+vim.g.vscode_snippets_path = { "~/.config/nvim/snippets" }
 
 if vim.fn.has "macunix" == 1 then
   -- User alternative binary for Bash on macOS
   vim.opt.shell = "/usr/local/bin/bash"
-
-  -- Load VSCode snippets.
-  vim.g.vscode_snippets_path = { "~/.config/nvim/snippets" }
 end
 
 -- bootstrap lazy and all plugins
