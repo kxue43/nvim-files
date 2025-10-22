@@ -6,14 +6,31 @@ return {
     opts = require "configs.conform",
   },
 
-  -- Python linters via nvim-lint. Only loaded on 'python' file type!
+  -- Linters via nvim-lint.
+  -- Only loaded on configured file types!
   {
     "mfussenegger/nvim-lint",
-    ft = { "python" },
+    -- The following controls when nvim-lint is loaded.
+    ft = {
+      "python",
+      "javascript",
+      "javascriptreact",
+      "javascript.jsx",
+      "typescript",
+      "typescriptreact",
+      "typescript.tsx",
+    },
     opts = {
+      -- The following controls when linters are invoked.
       events = { "BufWritePost", "BufReadPost", "InsertLeave" },
       linters_by_ft = {
         python = { "flake8", "mypy" },
+        javascript = { "eslint" },
+        javascriptreact = { "eslint" },
+        ["javascript.jsx"] = { "eslint" },
+        typescript = { "eslint" },
+        typescriptreact = { "eslint" },
+        ["typescript.tsx"] = { "eslint" },
         -- Use the "*" filetype to run linters on all filetypes.
         -- ['*'] = { 'global linter' },
         -- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
