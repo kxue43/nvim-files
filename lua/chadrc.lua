@@ -35,6 +35,7 @@ local M = {
       "mypy",
       "flake8",
       "black",
+      "eslint-lsp",
     },
   },
 }
