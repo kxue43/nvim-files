@@ -22,7 +22,7 @@ return {
 
       opts.pickers = {
         find_files = {
-          hidden = true, -- Include hidden files
+          hidden = false, -- Include hidden files
           no_ignore = true, -- Uncomment to also include gitignored files
         },
         live_grep = {
