@@ -5,7 +5,7 @@
 ---@type ChadrcConfig
 local M = {
   base46 = {
-    theme = "gruvbox_light",
+    theme = "gruvbox",
 
     hl_override = {
       Comment = { italic = false }, -- comments in any programming languages.
