@@ -8,8 +8,9 @@ local M = {
     theme = "gruvbox",
 
     hl_override = {
-      Comment = { italic = false }, -- comments in any programming languages.
-      ["@comment"] = { italic = true }, -- type-annotation type of Lua comments.
+      -- Making comments lighter. For details, see :help nvui.base46
+      Comment = { fg = "#928374" }, -- Targeting integrations/defaults.lua
+      ["@comment"] = { fg = "#928374" }, -- Targeting integrations/treesitter.lua
     },
   },
 
