@@ -1,0 +1,102 @@
+{
+  "Function Docstring": {
+    "prefix": "FDC",
+    "body": [
+      "\"\"\"",
+      "${1:desc}\n",
+      "Parameters:",
+      "    ${2:name} (${3:type}): ${4:desc}\n",
+      "Returns:",
+      "    ${5:name} (${6:type}): ${7:desc}",
+      "\"\"\""
+    ],
+    "description": "docstring for functions"
+  },
+  "Class Docstring": {
+    "prefix": "CDC",
+    "body": [
+      "\"\"\"",
+      "${1:desc}\n",
+      "Attributes:",
+      "    ${2:name} (${3:type}): ${4:desc}",
+      "\"\"\""
+    ],
+    "description": "docstring for classes"
+  },
+  "Just Docstring": {
+    "prefix": "DOC",
+    "body": ["\"\"\"", "$1", "\"\"\"$0"],
+    "description": "simplest docstring --- six double quotes"
+  },
+  "Standard Header": {
+    "prefix": "HEADER",
+    "body": [
+      "\"\"\"",
+      "Description: $1\n",
+      "Created: ${2:mm/dd/yyyy} by ${4}",
+      "Last Modified: ${3:mm/dd/yyyy} by ${4}",
+      "\"\"\""
+    ],
+    "description": "Standard header template"
+  },
+  "Python Module Start": {
+    "prefix": "MDS",
+    "body": ["if __name__ == '__main__':"],
+    "description": "if __name__ == '__main__':"
+  },
+  "OS-module Directory Path": {
+    "prefix": "ODP",
+    "body": [
+      "file_dir = os.path.dirname(os.path.realpath(__file__))",
+      "proj_dir = os.path.dirname(file_dir)"
+    ],
+    "description": "getting directory paths related to module file"
+  },
+  "Pathlib Directory Path": {
+    "prefix": "PDP",
+    "body": ["file_dir = Path(__file__).parent", "$1 = file_dir.parent"],
+    "description": "getting directory paths related to module file"
+  },
+  "Import Path": {
+    "prefix": "FPP",
+    "body": ["from pathlib import Path"],
+    "description": "from pathlib import Path"
+  },
+  "Import pandas": {
+    "prefix": "IPD",
+    "body": ["import pandas as pd"],
+    "description": "import pandas as pd"
+  },
+  "future import annotations": {
+    "prefix": "FIA",
+    "body": ["# Builtin", "from __future__ import annotations"],
+    "description": "type annotation setups to minimize runtime cost"
+  },
+  "Type Checking": {
+    "prefix": "TPC",
+    "body": [
+      "# Type Checking",
+      "from __future__ import annotations",
+      "from typing import TYPE_CHECKING\n",
+      "if TYPE_CHECKING:",
+      "    pass"
+    ],
+    "description": "type checking section"
+  },
+  "Private _types module": {
+    "prefix": "PTM",
+    "body": [
+      "from __future__ import annotations",
+      "from typing import TYPE_CHECKING\n",
+      "if not TYPE_CHECKING:",
+      "    raise ImportError(f\"The {__name__} module should not be imported at runtime.\")"
+    ],
+    "description": "Private _types module"
+  },
+  "Separting line": {
+    "prefix": "SPL",
+    "body": ["print('-' * 80)"],
+    "description": "separating lines"
+  }
+}
+

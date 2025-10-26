@@ -1,0 +1,93 @@
+{
+  "Separating Line": {
+    "prefix": "SPL",
+    "body": ["fmt.Println(\"--------------------\")"],
+    "description": "Print a separating line."
+  },
+  "fmt Println": {
+    "prefix": "FPL",
+    "body": ["fmt.Println($0)"],
+    "description": "fmt.Println()"
+  },
+  "fmt Printf": {
+    "prefix": "FPF",
+    "body": ["fmt.Printf(\"$1\", $0)"],
+    "description": "fmt.Printf()"
+  },
+  "fmt Sprintf": {
+    "prefix": "FSF",
+    "body": ["fmt.Sprintf(\"$1\", $0)"],
+    "description": "fmt.Sprintf()"
+  },
+  "Go routine start": {
+    "prefix": "GRS",
+    "body": ["go func() {", "\t$1", "}()"],
+    "description": "go func() { }()"
+  },
+  "defer function call": {
+    "prefix": "DFC",
+    "body": ["defer func() { $1 }()"],
+    "description": "defer func() { }()"
+  },
+  "fmt Errorf": {
+    "prefix": "FEF",
+    "body": ["fmt.Errorf(\"$0\")"],
+    "description": "fmt Errorf"
+  },
+  "Err Not Nil": {
+    "prefix": "EN",
+    "body": ["if err != nil {", "\t$1", "}"],
+    "description": "if err != nil {}"
+  },
+  "Err Not Nil - 1": {
+    "prefix": "ENA",
+    "body": ["if err1 != nil {", "\t$1", "}"],
+    "description": "if err1 != nil {}"
+  },
+  "Err Not Nil - 2": {
+    "prefix": "ENS",
+    "body": ["if err2 != nil {", "\t$1", "}"],
+    "description": "if err2 != nil {}"
+  },
+  "Err Not Nil, fmt": {
+    "prefix": "EF",
+    "body": ["if err != nil {", "\tfmt.Printf(\"Error: %s\\n\", err)", "}$0"],
+    "description": "if err != nil { fmt.Printf(...) }"
+  },
+  "Err Not Nil, fmt - 1": {
+    "prefix": "EFA",
+    "body": ["if err1 != nil {", "\tfmt.Printf(\"Error: %s\\n\", err1)", "}$0"],
+    "description": "if err1 != nil { fmt.Printf(...) }"
+  },
+  "Err Not Nil, fmt - 2": {
+    "prefix": "EFS",
+    "body": ["if err2 != nil {", "\tfmt.Printf(\"Error: %s\\n\", err2)", "}$0"],
+    "description": "if err2 != nil { fmt.Printf(...) }"
+  },
+  "Err Not Nil, errorf": {
+    "prefix": "EE",
+    "body": ["if err != nil {", "\t$1fmt.Errorf(\"$2: %w\", err)", "}$0"],
+    "description": "if err != nil { fmt.Printf(...) }"
+  },
+  "Err Not Nil, errorf - 1": {
+    "prefix": "EEA",
+    "body": ["if err1 != nil {", "\t$1fmt.Errorf(\"$2: %w\", err1)", "}$0"],
+    "description": "if err1 != nil { fmt.Printf(...) }"
+  },
+  "Err Not Nil, errorf - 2": {
+    "prefix": "EES",
+    "body": ["if err2 != nil {", "\t$1fmt.Errorf(\"$2: %w\", err2)", "}$0"],
+    "description": "if err2 != nil { fmt.Printf(...) }"
+  },
+  "JSON Omit Empty": {
+    "prefix": "JOE",
+    "body": ["`json:\"$1,omitempty\"`"],
+    "description": "`json:\",omitempty\"`"
+  },
+  "JSON No Omit": {
+    "prefix": "JNO",
+    "body": ["`json:\"$1\"`"],
+    "description": "`json:\"\"`"
+  }
+}
+

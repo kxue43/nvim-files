@@ -1,0 +1,18 @@
+{
+  "ERB Run": {
+    "prefix": "ERBR",
+    "body": ["<% $1 %>"],
+    "description": "ERB Run"
+  },
+  "ERB Print": {
+    "prefix": "ERBP",
+    "body": ["<%= $1 %>"],
+    "description": "ERB Print"
+  },
+  "ERB Block": {
+    "prefix": "ERBB",
+    "body": ["<% $1 %>\n", "<% end %>"],
+    "description": "ERB Block"
+  }
+}
+

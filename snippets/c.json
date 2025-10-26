@@ -1,0 +1,21 @@
+{
+  "Standard Starter": {
+    "prefix": "SST",
+    "body": [
+      "#include <stdio.h>",
+      "$1",
+      "int main(void)",
+      "{",
+      "    $0",
+      "    return 0;",
+      "}"
+    ],
+    "description": "Standard Starter"
+  },
+  "printf": {
+    "prefix": "PTF",
+    "body": ["printf(\"$1\\n\"$0);"],
+    "description": "printf"
+  }
+}
+

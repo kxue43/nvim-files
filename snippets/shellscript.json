@@ -1,0 +1,17 @@
+{
+  "Not When Sourced": {
+    "prefix": "NWS",
+    "body": [
+      "if [[ \"\\${BASH_SOURCE[0]}\" == \"\\$0\" ]]; then",
+      "  $1",
+      "fi\n$0"
+    ],
+    "description": "not when sourced"
+  },
+  "ShellCheck Disable Line": {
+    "prefix": "SDL",
+    "body": ["# shellcheck disable=SC$1"],
+    "description": "shellcheck disable line"
+  }
+}
+
