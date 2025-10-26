@@ -1,0 +1,43 @@
+{
+  "Docstring": {
+    "prefix": "DOC",
+    "body": ["/*$1*/"],
+    "description": "JavaScript block comment"
+  },
+  "ESM Directory Path": {
+    "prefix": "EDP",
+    "body": [
+      "import { fileURLToPath } from 'url';",
+      "import { dirname, join } from 'path';",
+      "\n",
+      "const fileDir = dirname(fileURLToPath(import.meta.url));"
+    ],
+    "description": "getting current module file dir path"
+  },
+  "ESM Import From": {
+    "prefix": "EIF",
+    "body": ["import { $2 } from '$1';"],
+    "description": "import from"
+  },
+  "ESM Import All": {
+    "prefix": "EIA",
+    "body": ["import * as $2 from '$1';"],
+    "description": "import * as from"
+  },
+  "Arror Function No Braces": {
+    "prefix": "AFN",
+    "body": ["$1 => $2"],
+    "description": "Arrow Function No Braces"
+  },
+  "Arror Function with Braces": {
+    "prefix": "AFB",
+    "body": ["$1 => { $2 }"],
+    "description": "Arrow Function with Braces"
+  },
+  "Error Callback": {
+    "prefix": "ECB",
+    "body": ["e => $1 "],
+    "description": "Error Callback"
+  }
+}
+

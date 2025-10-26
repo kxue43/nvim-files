@@ -1,0 +1,8 @@
+{
+  "Glossary Item": {
+    "prefix": "GI",
+    "body": ["* **$1**: $2"],
+    "description": "Glossary Item"
+  }
+}
+

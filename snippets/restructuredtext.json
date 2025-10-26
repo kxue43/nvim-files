@@ -1,0 +1,118 @@
+{
+  "program": {
+    "prefix": "RP",
+    "body": [":program:`$1`$0"],
+    "description": "program role"
+  },
+  "command": {
+    "prefix": "RC",
+    "body": [":command:`$1`$0"],
+    "description": "command role"
+  },
+  "file": {
+    "prefix": "RF",
+    "body": [":file:`$1`$0"],
+    "description": "file role"
+  },
+  "abbr": {
+    "prefix": "RA",
+    "body": [":abbr:`$1 ($2)`$0"],
+    "description": "abbr role"
+  },
+  "doc": {
+    "prefix": "RD",
+    "body": [":doc:`$1`$0"],
+    "description": "doc role"
+  },
+  "ref": {
+    "prefix": "RR",
+    "body": [":ref:`$1 <$2>`$0"],
+    "description": "ref role"
+  },
+  "menuselection": {
+    "prefix": "RM",
+    "body": [":menuselection:`$1 -->$2`$0"],
+    "description": "menuselection role"
+  },
+  "kbd": {
+    "prefix": "RK",
+    "body": [":kbd:`$1`$0"],
+    "description": "kbd role"
+  },
+  "option": {
+    "prefix": "RO",
+    "body": [":option:`$1`$0"],
+    "description": "option role"
+  },
+  "envvar": {
+    "prefix": "RE",
+    "body": [":envvar:`$1`$0"],
+    "description": "envvar role"
+  },
+  "pymod": {
+    "prefix": "RPM",
+    "body": [":py:mod:`$1`$0"],
+    "description": "pymod role"
+  },
+  "pyclass": {
+    "prefix": "RPC",
+    "body": [":py:class:`$1`$0"],
+    "description": "pyclass role"
+  },
+  "pyfunc": {
+    "prefix": "RPF",
+    "body": [":py:func:`$1`$0"],
+    "description": "pyfunc role"
+  },
+  "pyobj": {
+    "prefix": "RPO",
+    "body": [":py:obj:`$1`$0"],
+    "description": "pyobj role"
+  },
+  "pymeth": {
+    "prefix": "RPE",
+    "body": [":py:meth:`$1`$0"],
+    "description": "pymeth role"
+  },
+  "pyattr": {
+    "prefix": "RPA",
+    "body": [":py:attr:`$1`$0"],
+    "description": "pyattr role"
+  },
+  "codeblock": {
+    "prefix": "DCB",
+    "body": [".. code-block:: $1", "\n   $2"],
+    "description": "code-block directive"
+  },
+  "note": {
+    "prefix": "DN",
+    "body": [".. note:: $1"],
+    "description": "note directive"
+  },
+  "warning": {
+    "prefix": "DW",
+    "body": [".. warning:: $1"],
+    "description": "warning directive"
+  },
+  "tip": {
+    "prefix": "DT",
+    "body": [".. tip:: $1"],
+    "description": "tip directive"
+  },
+  "contents": {
+    "prefix": "DC",
+    "body": [".. contents:: Contents:", "   :local:"],
+    "description": "tip directive"
+  },
+  "toc": {
+    "prefix": "DTOC",
+    "body": [".. toctree::", "   :maxdepth: 2", "   :caption: Contents:$1"],
+    "description": "tip directive"
+  },
+  "hyperlink": {
+    "prefix": "HL",
+    "body": ["`$1`_$0"],
+    "description": "hyperlink"
+  }
+}
+

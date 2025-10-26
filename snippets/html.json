@@ -1,0 +1,8 @@
+{
+  "NA for None": {
+    "prefix": "NFN",
+    "body": ["{{ $1['$2']|NA_for_None }}"],
+    "description": "Jinja2 variable with custom filter"
+  }
+}
+

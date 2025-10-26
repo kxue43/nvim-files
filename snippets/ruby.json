@@ -1,0 +1,8 @@
+{
+  "Frozen String Literal": {
+    "prefix": "FSL",
+    "body": ["# frozen_string_literal: true"],
+    "description": "Fronzen String Literal"
+  }
+}
+
