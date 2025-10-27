@@ -46,6 +46,7 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
+-- The order "options -> autocmds -> commands -> mappings" is important.
 require "options"
 require "autocmds"
 require "commands"
