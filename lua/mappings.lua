@@ -25,3 +25,15 @@ map("n", "<leader>fu", function()
     cwd = dir,
   }
 end, { desc = "telescope find files under the specified directory." })
+
+map("n", "<leader>gu", function()
+  local dir = vim.fn.input {
+    prompt = "Grep under directory: ",
+    default = "",
+    completion = "dir",
+  }
+
+  require("telescope.builtin").live_grep {
+    cwd = dir,
+  }
+end, { desc = "telescope live grep under the specified directory." })
