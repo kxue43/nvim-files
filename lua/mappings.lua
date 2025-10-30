@@ -1,6 +1,10 @@
 require "nvchad.mappings"
 
 local map = vim.keymap.set
+local del = vim.keymap.del
+
+-- Delete the "toggle relative number" key map set by NvChad.
+del("n", "<leader>rn")
 
 map("n", "\\eb", function()
   print(vim.fn.expand "%:p")
