@@ -12,6 +12,10 @@
     "prefix": "SDL",
     "body": ["# shellcheck disable=SC$1"],
     "description": "shellcheck disable line"
+  },
+  "Universal Bash Shebang": {
+    "prefix": "UBS",
+    "body": ["#!/usr/bin/env bash\n$0"],
+    "description": "universal bash shebang"
   }
 }
-
