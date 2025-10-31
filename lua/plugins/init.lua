@@ -1,4 +1,10 @@
 return {
+  -- Always load which-key.
+  {
+    "folke/which-key.nvim",
+    lazy = false,
+  },
+
   -- Pull own LSP configs.
   {
     "neovim/nvim-lspconfig",
