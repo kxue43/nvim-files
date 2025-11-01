@@ -30,7 +30,7 @@ vim.lsp.config("basedpyright", {
 })
 
 -- Enable configured LSPs.
-local servers = { "gopls", "lua_ls", "bashls", "basedpyright", "ts_ls" }
+local servers = { "gopls", "lua_ls", "bashls", "basedpyright", "ts_ls", "stylua", "awk_ls" }
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
