@@ -29,6 +29,7 @@ return {
         "vimdoc",
         "html",
         "css",
+        "awk",
       },
     },
     branch = "master",
