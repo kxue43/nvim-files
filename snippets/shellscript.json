@@ -47,5 +47,10 @@
     "prefix": "PIC",
     "body": ["printf \"\\033[36m%s\\033[0m$1\" \"$0\""],
     "description": "printf in cyan"
+  },
+  "Shell Modeline": {
+    "prefix": "SHM",
+    "body": ["# vim: set ft=sh :"],
+    "description": "shell modeline"
   }
 }
