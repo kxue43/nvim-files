@@ -20,32 +20,32 @@
   },
   "Printf In Red": {
     "prefix": "PIR",
-    "body": ["printf \"\033[31m%s\033[0m$1\" \"$0\""],
+    "body": ["printf \"\\033[31m%s\\033[0m$1\" \"$0\""],
     "description": "printf in red"
   },
   "Printf In Green": {
     "prefix": "PIG",
-    "body": ["printf \"\033[32m%s\033[0m$1\" \"$0\""],
+    "body": ["printf \"\\033[32m%s\\033[0m$1\" \"$0\""],
     "description": "printf in green"
   },
   "Printf In Yellow": {
     "prefix": "PIY",
-    "body": ["printf \"\033[33m%s\033[0m$1\" \"$0\""],
+    "body": ["printf \"\\033[33m%s\\033[0m$1\" \"$0\""],
     "description": "printf in yellow"
   },
   "Printf In Blue": {
     "prefix": "PIB",
-    "body": ["printf \"\033[34m%s\033[0m$1\" \"$0\""],
+    "body": ["printf \"\\033[34m%s\\033[0m$1\" \"$0\""],
     "description": "printf in blue"
   },
   "Printf In Magenta": {
     "prefix": "PIM",
-    "body": ["printf \"\033[35m%s\033[0m$1\" \"$0\""],
+    "body": ["printf \"\\033[35m%s\\033[0m$1\" \"$0\""],
     "description": "printf in magenta"
   },
   "Printf In Cyan": {
     "prefix": "PIC",
-    "body": ["printf \"\033[36m%s\033[0m$1\" \"$0\""],
+    "body": ["printf \"\\033[36m%s\\033[0m$1\" \"$0\""],
     "description": "printf in cyan"
   }
 }
