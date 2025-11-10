@@ -2,6 +2,7 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     go = { "gofmt" },
+    yaml = { "prettier" },
     json = { "prettier" },
     jsonc = { "prettier" },
     python = { "black", timeout_ms = 10000 },
