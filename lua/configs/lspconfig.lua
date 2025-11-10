@@ -5,7 +5,7 @@ vim.lsp.config("gopls", {
   settings = {
     gopls = {
       completeUnimported = true,
-      usePlaceholders = true,
+      usePlaceholders = false,
       analyses = {
         unusedparams = true,
       },
