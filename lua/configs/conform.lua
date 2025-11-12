@@ -21,6 +21,12 @@ local options = {
   format_on_save = {
     timeout_ms = 1000,
   },
+
+  formatters = {
+    prettier = {
+      prepend_args = { "--ignore-path", "/dev/null", "--stdin-filepath", "$FILENAME" },
+    },
+  },
 }
 
 return options
