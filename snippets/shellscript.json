@@ -52,5 +52,10 @@
     "prefix": "SHM",
     "body": ["# vim: set ft=sh :"],
     "description": "shell modeline"
+  },
+  "Set Shell Options": {
+    "prefix": "EUP",
+    "body": ["set -eu -o pipefail"],
+    "description": "set shell options"
   }
 }
