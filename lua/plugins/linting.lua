@@ -1,3 +1,4 @@
+-- nvim-lint is part from NvChad. The following contents are adapted from LazyVim template.
 return {
   -- Only loaded on configured file types!
   {
@@ -16,7 +17,7 @@ return {
       -- The following controls when linters are invoked.
       events = { "BufWritePost", "BufReadPost", "InsertLeave" },
       linters_by_ft = {
-        python = { "flake8", "mypy" },
+        python = { "mypy" },
         javascript = { "eslint" },
         javascriptreact = { "eslint" },
         ["javascript.jsx"] = { "eslint" },
