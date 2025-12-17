@@ -26,11 +26,16 @@ vim.lsp.config("basedpyright", {
         },
       },
     },
+    python = {
+      analysis = {
+        ignore = { "*" },
+      },
+    },
   },
 })
 
 -- Enable configured LSPs.
-local servers = { "gopls", "lua_ls", "bashls", "basedpyright", "ts_ls", "stylua" }
+local servers = { "gopls", "lua_ls", "bashls", "basedpyright", "ruff", "ts_ls", "stylua" }
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers

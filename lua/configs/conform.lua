@@ -5,7 +5,6 @@ local options = {
     yaml = { "prettier" },
     json = { "prettier" },
     jsonc = { "prettier" },
-    python = { "black", timeout_ms = 10000 },
     javascript = { "prettier" },
     javascriptreact = { "prettier" },
     ["javascript.jsx"] = { "prettier" },

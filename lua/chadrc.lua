@@ -29,10 +29,12 @@ local M = {
       "bash-language-server",
       "prettier",
       "basedpyright",
+      "ruff",
       "typescript-language-server",
     },
-    -- Mypy, flake8 and black should be provided from the project's virtualenv
-    -- rather than by Mason.
+    -- Mypy, flake8 and black should be provided from the project's virtualenv rather than by Mason.
+    -- Currently ruff is used for linting and formatting, but flake8 and black still remain in the skip list.
+    -- Astral.sh has a beta type-checker ty, which may replace mypy in the future.
     skip = {
       "mypy",
       "flake8",
