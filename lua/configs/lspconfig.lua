@@ -26,11 +26,6 @@ vim.lsp.config("basedpyright", {
         },
       },
     },
-    python = {
-      analysis = {
-        ignore = { "*" },
-      },
-    },
   },
 })
 
