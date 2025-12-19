@@ -6,8 +6,9 @@ local del = vim.keymap.del
 -- Delete the "toggle relative number" key map set by NvChad.
 del("n", "<leader>rn")
 
--- Delete the "toggle floating term" key map set by NvChad.
+-- Delete the "toggle floating term" and "toggle vertical term" key maps set by NvChad.
 del({ "n", "t" }, "<A-i>")
+del({ "n", "t" }, "<A-v>")
 
 -- Show full path of the current buffer.
 map("n", "\\eb", function()
@@ -47,11 +48,6 @@ map("n", "<leader>gu", function()
     cwd = dir,
   }
 end, { desc = "telescope live grep under the specified directory." })
-
--- Toggle full-window terminal.
-map({ "n", "t" }, "<A-f>", function()
-  require("nvchad.term").toggle { pos = "sp", id = "kxue43_ftoggleTerm", size = 1 }
-end, { desc = "terminal toggleable full-window term" })
 
 -- Stretch current NvChad htoggleTerm to window top.
 map("t", "<A-k>", "<C-\\><C-n><C-w>k:hide<CR>a", { desc = "Stretch current htoggleTerm to window top." })
