@@ -28,10 +28,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-if vim.fn.has "macunix" == 1 then
-  vim.opt.rtp:append "/opt/homebrew/opt/fzf"
-end
-
 local lazy_config = require "configs.lazy"
 
 -- load plugins
