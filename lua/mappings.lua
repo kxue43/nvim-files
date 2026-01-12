@@ -11,6 +11,10 @@ del({ "n", "t" }, "<A-i>")
 del({ "n", "t" }, "<A-v>")
 del({ "n", "t" }, "<A-h>")
 
+-- Delete the <C-x> key map that escape terminal mode. Use <C-\\><C-n> instead.
+-- <C-x> is reserved for Readline.
+del("t", "<C-x>")
+
 -- Show full path of the current buffer.
 map("n", "\\eb", function()
   print(vim.fn.expand "%:p")
