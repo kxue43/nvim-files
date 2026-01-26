@@ -32,8 +32,7 @@ return {
         "awk",
       },
     },
-    branch = "master",
     lazy = false,
-    build = ":TSUpdate",
+    branch = "main",
   },
 }
