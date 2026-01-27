@@ -30,6 +30,8 @@ return {
         "html",
         "css",
         "awk",
+        "markdown",
+        "markdown_inline",
       },
     },
     lazy = false,
