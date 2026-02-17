@@ -57,5 +57,12 @@
     "prefix": "EUP",
     "body": ["set -eu -o pipefail"],
     "description": "set shell options"
+  },
+  "Current Script Directory": {
+    "prefix": "CSD",
+    "body": [
+      "\"$(cd \"$(dirname \"$(readlink \"${BASH_SOURCE[0]}\")\")\" && pwd)\""
+    ],
+    "description": "current script directory"
   }
 }
