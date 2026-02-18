@@ -42,6 +42,11 @@ return {
         --     return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
         --   end,
         -- },
+        mypy = {
+          condition = function(ctx)
+            return vim.fn.executable "mypy" == 1
+          end,
+        },
       },
     },
     config = function(_, opts)
