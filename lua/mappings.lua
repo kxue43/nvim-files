@@ -127,9 +127,3 @@ map("t", "<A-h>", function()
     vim.api.nvim_set_current_buf(alt_buf)
   end
 end, { desc = "Hide the current htoggleTerm, fullscreen or not." })
-
--- Move out of Claude Code window by the same key bindings.
-map("t", "<C-h>", [[<C-\><C-n><C-w>h]], { desc = "Window left" })
-map("t", "<C-l>", [[<C-\><C-n><C-w>l]], { desc = "Window right" })
-map("t", "<C-j>", [[<C-\><C-n><C-w>j]], { desc = "Window down" })
-map("t", "<C-k>", [[<C-\><C-n><C-w>k]], { desc = "Window up" })
