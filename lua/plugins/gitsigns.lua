@@ -69,6 +69,8 @@ return {
         map("n", "\\tw", gitsigns.toggle_word_diff, { desc = "Toggle word diff." })
       end
 
+      options.current_line_blame = true
+
       return options
     end,
   },
