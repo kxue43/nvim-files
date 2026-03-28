@@ -41,7 +41,7 @@ M.defaults = function()
   })
 
   -- Enable configured LSPs.
-  local servers = { "gopls", "lua_ls", "bashls", "basedpyright", "ruff", "ts_ls", "stylua" }
+  local servers = { "gopls", "lua_ls", "bashls", "basedpyright", "ruff", "ts_ls", "stylua", "eslint" }
   vim.lsp.enable(servers)
 
   -- read :h vim.lsp.config for changing options of lsp servers
