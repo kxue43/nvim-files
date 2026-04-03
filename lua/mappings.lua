@@ -54,7 +54,7 @@ map("n", "<leader>gu", function()
   }
 end, { desc = "telescope live grep under the specified directory." })
 
--- Stretch the current NvChad htoggleTerm to fullscreen.
+-- Put the current NvChad htoggleTerm at the bottom of the window.
 map("t", "<A-k>", function()
   -- Get alternate buffer number.
   local alt_buf = vim.fn.bufnr "#"
@@ -64,45 +64,30 @@ map("t", "<A-k>", function()
     return
   end
 
-  if vim.fn.bufwinnr(alt_buf) <= 0 then
-    -- If alternate buffer is not visible, terminal window is already fullscreen. Just return.
-    return
-  end
-
-  -- Exit from terminal mode to normal mode.
-  vim.cmd.stopinsert()
-
-  -- Move to the window above the terminal.
-  vim.cmd "wincmd k"
-
-  -- Hide the window.
-  vim.cmd "hide"
-
-  -- Return to insert mode in the terminal window
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("a", true, false, true), "n", false)
-end, { desc = "Stretch the current htoggleTerm to fullscreen." })
-
--- Put the current NvChad htoggleTerm at the bottom of the window.
-map("t", "<A-j>", function()
-  -- Get alternate buffer number.
-  local alt_buf = vim.fn.bufnr "#"
-
-  if alt_buf == -1 or not vim.api.nvim_buf_is_valid(alt_buf) then
-    -- If alternate buffer doesn't exist or is invalid, just return.
-    return
-  end
-
   if vim.fn.bufwinnr(alt_buf) > 0 then
-    -- If alternate buffer is visible, terminal window is already at the bottom. Just return.
-    return
+    -- If alternate buffer is visible, terminal window is at the bottom. Make it fullscreen.
+
+    -- Exit from terminal mode to normal mode.
+    vim.cmd.stopinsert()
+
+    -- Move to the window above the terminal.
+    vim.cmd "wincmd k"
+
+    -- Hide the window.
+    vim.cmd "hide"
+
+    -- Return to insert mode in the terminal window
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("a", true, false, true), "n", false)
+  else
+    -- If alternate buffer is not visible, terminal window is fullscreen. Resize it to bottom.
+
+    -- switch to alternate buffer.
+    vim.api.nvim_set_current_buf(alt_buf)
+
+    -- Open up terminal at the bottom again.
+    require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
   end
-
-  -- switch to alternate buffer.
-  vim.api.nvim_set_current_buf(alt_buf)
-
-  -- Open up terminal at the bottom again.
-  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
-end, { desc = "Put the current htoggleTerm at the bottom of the window." })
+end, { desc = "Toggle the current htoggleTerm between bottom and fullscreen." })
 
 map({ "n" }, "<A-h>", function()
   require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
