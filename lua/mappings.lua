@@ -54,7 +54,7 @@ map("n", "<leader>gu", function()
   }
 end, { desc = "telescope live grep under the specified directory." })
 
--- Put the current NvChad htoggleTerm at the bottom of the window.
+-- Toggle the current htoggleTerm between bottom and fullscreen.
 map("t", "<A-k>", function()
   -- Get alternate buffer number.
   local alt_buf = vim.fn.bufnr "#"
@@ -87,6 +87,26 @@ map("t", "<A-k>", function()
     -- Open up terminal at the bottom again.
     require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
   end
+end, { desc = "Toggle the current htoggleTerm between bottom and fullscreen." })
+
+-- Open the current htoggleTerm and make it fullscreen.
+map("n", "<A-k>", function()
+  -- Open the current htoggleTerminal.
+  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
+
+  -- Make it fullscreen.
+
+  -- Exit from terminal mode to normal mode.
+  vim.cmd.stopinsert()
+
+  -- Move to the window above the terminal.
+  vim.cmd "wincmd k"
+
+  -- Hide the window.
+  vim.cmd "hide"
+
+  -- Return to insert mode in the terminal window
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("a", true, false, true), "n", false)
 end, { desc = "Toggle the current htoggleTerm between bottom and fullscreen." })
 
 map({ "n" }, "<A-h>", function()
