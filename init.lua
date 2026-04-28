@@ -1,5 +1,9 @@
+-- Required by NvChad
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
+
+-- Stop cursor from blinking in terminal mode.
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,t:block-blinkon0-blinkoff0-blinkwait0-TermCursor"
 
 -- Load VSCode snippets.
 vim.g.vscode_snippets_path = { "~/.config/nvim/snippets" }
