@@ -61,7 +61,7 @@
   "Current Script Directory": {
     "prefix": "CSD",
     "body": [
-      "\"$(cd \"$(dirname \"$(readlink \"${BASH_SOURCE[0]}\")\")\" && pwd)\""
+      "\"$(cd \"$(dirname \"$(readlink -f \"${BASH_SOURCE[0]}\")\")\" && pwd)\""
     ],
     "description": "current script directory"
   }
