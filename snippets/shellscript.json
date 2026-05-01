@@ -18,35 +18,31 @@
     "body": ["#!/usr/bin/env bash\n$0"],
     "description": "universal bash shebang"
   },
-  "Printf In Red": {
-    "prefix": "PIR",
-    "body": ["printf \"\\033[31m%s\\033[0m$1\" \"$0\""],
-    "description": "printf in red"
+  "Log Error Level": {
+    "prefix": "LEL",
+    "body": [
+      "_log_error() {",
+      "  if [[ -t 2 ]]; then",
+      "    printf \"\033[31m%s\033[0m\n\" \"$@\" >&2",
+      "  else",
+      "    printf \"%s\n\" \"$@\" >&2",
+      "  fi",
+      "}"
+    ],
+    "description": "log at error level"
   },
-  "Printf In Green": {
-    "prefix": "PIG",
-    "body": ["printf \"\\033[32m%s\\033[0m$1\" \"$0\""],
-    "description": "printf in green"
-  },
-  "Printf In Yellow": {
-    "prefix": "PIY",
-    "body": ["printf \"\\033[33m%s\\033[0m$1\" \"$0\""],
-    "description": "printf in yellow"
-  },
-  "Printf In Blue": {
-    "prefix": "PIB",
-    "body": ["printf \"\\033[34m%s\\033[0m$1\" \"$0\""],
-    "description": "printf in blue"
-  },
-  "Printf In Magenta": {
-    "prefix": "PIM",
-    "body": ["printf \"\\033[35m%s\\033[0m$1\" \"$0\""],
-    "description": "printf in magenta"
-  },
-  "Printf In Cyan": {
-    "prefix": "PIC",
-    "body": ["printf \"\\033[36m%s\\033[0m$1\" \"$0\""],
-    "description": "printf in cyan"
+  "Log Info Level": {
+    "prefix": "LIL",
+    "body": [
+      "_log_info() {",
+      "  if [[ -t 1 ]]; then",
+      "    printf \"\033[36m%s\033[0m\n\" \"$@\"",
+      "  else",
+      "    printf \"%s\n\" \"$@\"",
+      "  fi",
+      "}"
+    ],
+    "description": "log at info level"
   },
   "Shell Modeline": {
     "prefix": "SHM",
