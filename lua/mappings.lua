@@ -132,3 +132,40 @@ map("t", "<A-h>", function()
     vim.api.nvim_set_current_buf(alt_buf)
   end
 end, { desc = "Hide the current htoggleTerm, fullscreen or not." })
+
+-- Wrap words under cursor inside backticks
+local function wrap_in_backticks(boundary_pat)
+  local _, col = unpack(vim.api.nvim_win_get_cursor(0))
+  local line = vim.api.nvim_get_current_line()
+  local cur = col + 1 -- convert to 1-indexed for Lua string ops
+
+  if cur > #line or line:sub(cur, cur):match(boundary_pat) then
+    return
+  end
+
+  local word_start = cur
+  while word_start > 1 and not line:sub(word_start - 1, word_start - 1):match(boundary_pat) do
+    word_start = word_start - 1
+  end
+
+  local word_end = cur
+  while word_end < #line and not line:sub(word_end + 1, word_end + 1):match(boundary_pat) do
+    word_end = word_end + 1
+  end
+
+  local new_line = line:sub(1, word_end) .. "`" .. line:sub(word_end + 1)
+  new_line = new_line:sub(1, word_start - 1) .. "`" .. new_line:sub(word_start)
+  vim.api.nvim_set_current_line(new_line)
+end
+
+map({ "n" }, "<leader>wg", function()
+  wrap_in_backticks "%s"
+end, {
+  desc = "Wrap greedily the current words under cursor inside backticks. Boundaries are leftmost and right most empty space characters.",
+})
+
+map({ "n" }, "<leader>wl", function()
+  wrap_in_backticks "[%s,.:;]"
+end, {
+  desc = "Wrap lazily the current words under cursor inside backticks. Boundaries are leftmost and right most empty space character, comma, period, colon, semi-colon.",
+})
