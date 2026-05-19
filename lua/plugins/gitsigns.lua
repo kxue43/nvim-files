@@ -3,10 +3,10 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = "User FilePost",
-    opts = function()
-      local options = require "nvchad.configs.gitsigns"
+    opts = {
+      current_line_blame = true,
 
-      options.on_attach = function(bufnr)
+      on_attach = function(bufnr)
         local gitsigns = require "gitsigns"
 
         local function map(mode, l, r, opts)
@@ -67,11 +67,7 @@ return {
         -- Toggles
         map("n", "\\tb", gitsigns.toggle_current_line_blame, { desc = "Toggle line blame." })
         map("n", "\\tw", gitsigns.toggle_word_diff, { desc = "Toggle word diff." })
-      end
-
-      options.current_line_blame = true
-
-      return options
-    end,
+      end,
+    },
   },
 }
