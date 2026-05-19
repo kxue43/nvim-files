@@ -13,6 +13,26 @@ return {
     end,
   },
 
+  -- Add onto nvim-tree defaults.
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      filters = {
+        git_ignored = false,
+        dotfiles = false,
+      },
+      filesystem_watchers = {
+        enable = true,
+        ignore_dirs = { ".venv", "__pycache__", "*.egg-info", ".mypy_cache", ".pytest_cache", ".ruff_cache" },
+      },
+      actions = {
+        expand_all = {
+          exclude = { ".venv", ".git", "__pycache__", ".mypy_cache", ".pytest_cache", ".ruff_cache" },
+        },
+      },
+    },
+  },
+
   -- Ensure tree-sitter parsers.
   {
     "nvim-treesitter/nvim-treesitter",
