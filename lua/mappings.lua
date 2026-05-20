@@ -169,3 +169,12 @@ map({ "n" }, "<leader>wl", function()
 end, {
   desc = "Wrap lazily the current words under cursor inside backticks. Boundaries are leftmost and right most empty space character, comma, period, colon, semi-colon.",
 })
+
+-- Close all unmodified buffers
+map({ "n" }, "\\bc", function()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].buftype == "" and not vim.bo[buf].modified then
+      vim.api.nvim_buf_delete(buf, {})
+    end
+  end
+end, { desc = "Close all unmodified buffers." })
