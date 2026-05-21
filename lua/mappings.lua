@@ -54,6 +54,21 @@ map("n", "<leader>gu", function()
   }
 end, { desc = "telescope live grep under the specified directory." })
 
+-- Telescope find file from highlighted
+map("v", "<leader>ff", function()
+  -- The callback runs while still in visual mode context, so '< / '> marks
+  -- haven't been committed yet. Yank to a temporary register instead, mirroring
+  -- how telescope's own grep_string handles visual selections.
+  local saved = vim.fn.getreg "v"
+  vim.cmd [[noautocmd sil norm! "vy]]
+  local selection = vim.fn.getreg "v"
+  vim.fn.setreg("v", saved)
+
+  require("telescope.builtin").find_files {
+    default_text = selection,
+  }
+end, { desc = "telescope find files from visual selection." })
+
 -- Toggle the current htoggleTerm between bottom and fullscreen.
 map("t", "<A-k>", function()
   -- Get alternate buffer number.
