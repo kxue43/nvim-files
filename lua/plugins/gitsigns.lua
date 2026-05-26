@@ -49,9 +49,7 @@ return {
         map("n", "\\hS", gitsigns.stage_buffer, { desc = "Stage buffer." })
         map("n", "\\hR", gitsigns.reset_buffer, { desc = "Reset buffer." })
 
-        map("n", "\\hb", function()
-          gitsigns.blame_line { full = true }
-        end, { desc = "Blame current line." })
+        map("n", "\\hb", gitsigns.blame_line, { desc = "Blame current line." })
 
         map("n", "\\hd", gitsigns.diffthis, { desc = "Buffer git diff" })
 
