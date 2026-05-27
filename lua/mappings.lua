@@ -198,3 +198,37 @@ end, { desc = "Close all unmodified buffers." })
 map({ "t" }, "<C-n>", function()
   vim.cmd.stopinsert()
 end, { desc = "Jumping out of terminal mode." })
+
+-- dedent in the plus register
+map({ "n" }, "<leader>dp", function()
+  local text = vim.fn.getreg "+"
+  local lines = vim.split(text, "\n", { plain = true })
+
+  local prefix = nil
+  for _, line in ipairs(lines) do
+    if line:match "%S" then
+      local indent = line:match "^(%s*)"
+      if prefix == nil then
+        prefix = indent
+      else
+        local i = 1
+        while i <= #prefix and i <= #indent and prefix:sub(i, i) == indent:sub(i, i) do
+          i = i + 1
+        end
+        prefix = prefix:sub(1, i - 1)
+      end
+    end
+  end
+
+  if not prefix or prefix == "" then
+    return
+  end
+
+  for i, line in ipairs(lines) do
+    if line:sub(1, #prefix) == prefix then
+      lines[i] = line:sub(#prefix + 1)
+    end
+  end
+
+  vim.fn.setreg("+", table.concat(lines, "\n"))
+end, { desc = "Dedent the string in the plug register." })
